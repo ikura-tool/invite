@@ -3,106 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        :root {
-            --bg-color: #313338;
-            --text-main: #dbdee1;
-            --text-muted: #949ba4;
-            --text-link: #00a8fc;
-            --embed-bg: #2b2d31;
-            --user-name: #ffffff;
-            --timestamp: #949ba4;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-            padding: 20px;
-        }
-
-        /* メッセージ全体のコンテナ */
-        .discord-message {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        /* アイコン */
-        .user-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        /* 右側のコンテンツ */
-        .message-content {
+        /* Embedカードのデザイン設定 */
+        .discord-embed {
             display: flex;
             flex-direction: column;
-            gap: 4px;
-        }
-
-        /* ユーザー情報ヘッダー */
-        .message-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .username {
-            color: var(--user-name);
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .badge-purple {
-            background-color: #5865f2;
-            color: white;
-            font-size: 10px;
-            padding: 1px 4px;
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            gap: 2px;
-        }
-
-        .timestamp {
-            color: var(--timestamp);
-            font-size: 12px;
-        }
-
-        /* 本文リンク */
-        .main-link {
-            color: var(--text-link);
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .main-link:hover {
-            text-decoration: underline;
-        }
-
-        /* 埋め込み(Embed)カード */
-        .discord-embed {
-            background-color: var(--embed-bg);
-            border-left: 4px solid #1e1f22;
+            background-color: #2b2d31; /* DiscordのEmbed背景色 */
+            border-left: 4px solid #1e1f22; /* 左側の境界線 */
             border-radius: 4px;
             padding: 12px 16px;
-            margin-top: 4px;
             max-width: 432px;
-            display: flex;
-            flex-direction: column;
+            font-family: sans-serif;
             gap: 8px;
         }
 
         .embed-label {
-            color: var(--text-main);
+            color: #dbdee1;
             font-size: 12px;
             font-weight: 600;
         }
 
         .embed-title {
-            color: var(--text-link);
+            color: #00a8fc;
             font-size: 16px;
             font-weight: 600;
             text-decoration: none;
@@ -113,33 +34,21 @@
         }
 
         .embed-footer {
-            color: var(--text-main);
+            color: #ffffff;
             font-size: 14px;
-            opacity: 0.9;
+            line-height: 1.3;
         }
     </style>
 </head>
-<body>
+<body style="background-color: #313338; padding: 50px;">
 
-    <div class="discord-message">
-        <img src="https://via.placeholder.com/40" alt="icon" class="user-icon">
-
-        <div class="message-content">
-            <div class="message-header">
-                <span class="username">62223</span>
-                <span class="badge-purple">💜 めじこん</span>
-                <span class="timestamp">10:06</span>
-            </div>
-
-            <a href="https://dc.gg/md" class="main-link">https://dc.gg/md</a>
-
-            <div class="discord-embed">
-                <div class="embed-label">Discord</div>
-                <a href="https://discord.com/invite/xzvzXsVWDe" class="embed-title">Join the md Discord Server!</a>
-                <div class="embed-footer">
-                    https://discord.com/invite/xzvzXsVWDe | 664 members
-                </div>
-            </div>
+    <div class="discord-embed">
+        <div class="embed-label">Discord</div>
+        <a href="https://discord.gg/xzvzXsVWDe" target="_blank" class="embed-title">
+            Join the md Discord Server!
+        </a>
+        <div class="embed-footer">
+            https://discord.com/invite/xzvzXsVWDe
         </div>
     </div>
 
