@@ -1,61 +1,147 @@
-<style>
-  /* カード全体のコンテナ */
-  .discord-card {
-    background-color: #2b2d31; /* Discordの背景色 */
-    border-radius: 4px;
-    border-left: 4px solid #1e1f22; /* 左側の暗いアクセント */
-    padding: 16px;
-    max-width: 432px;
-    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    text-decoration: none; /* リンクの下線を消す */
-    transition: background-color 0.1s;
-  }
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --bg-color: #313338;
+            --text-main: #dbdee1;
+            --text-muted: #949ba4;
+            --text-link: #00a8fc;
+            --embed-bg: #2b2d31;
+            --user-name: #ffffff;
+            --timestamp: #949ba4;
+        }
 
-  .discord-card:hover {
-    background-color: #2e3035; /* ホバー時に少し明るく */
-  }
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            padding: 20px;
+        }
 
-  /* 上部の「Discord」テキスト */
-  .discord-card-label {
-    color: #dbdee1;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-  }
+        /* メッセージ全体のコンテナ */
+        .discord-message {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
 
-  /* 中央の大きなタイトル（リンク風の青色） */
-  .discord-card-title {
-    color: #00a8fc;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.25;
-  }
+        /* アイコン */
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
 
-  .discord-card-title:hover {
-    text-decoration: underline;
-  }
+        /* 右側のコンテンツ */
+        .message-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
 
-  /* 下部の詳細情報（URL | メンバー数） */
-  .discord-card-footer {
-    color: #ffffff;
-    font-size: 14px;
-    word-break: break-all;
-  }
+        /* ユーザー情報ヘッダー */
+        .message-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-  .discord-card-footer span {
-    color: #ffffff;
-    opacity: 0.9;
-  }
-</style>
+        .username {
+            color: var(--user-name);
+            font-weight: 600;
+            font-size: 16px;
+        }
 
-<a href="https://discord.gg/xzvzXsVWDe" target="_blank" class="discord-card">
-  <div class="discord-card-label">Discord</div>
-  <div class="discord-card-title">Join the md Discord Server!</div>
-  <div class="discord-card-footer">
-    https://discord.com/invite/xzvzXsVWDe | 664 members
-  </div>
-</a>
+        .badge-purple {
+            background-color: #5865f2;
+            color: white;
+            font-size: 10px;
+            padding: 1px 4px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .timestamp {
+            color: var(--timestamp);
+            font-size: 12px;
+        }
+
+        /* 本文リンク */
+        .main-link {
+            color: var(--text-link);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .main-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 埋め込み(Embed)カード */
+        .discord-embed {
+            background-color: var(--embed-bg);
+            border-left: 4px solid #1e1f22;
+            border-radius: 4px;
+            padding: 12px 16px;
+            margin-top: 4px;
+            max-width: 432px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .embed-label {
+            color: var(--text-main);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .embed-title {
+            color: var(--text-link);
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .embed-title:hover {
+            text-decoration: underline;
+        }
+
+        .embed-footer {
+            color: var(--text-main);
+            font-size: 14px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="discord-message">
+        <img src="https://via.placeholder.com/40" alt="icon" class="user-icon">
+
+        <div class="message-content">
+            <div class="message-header">
+                <span class="username">62223</span>
+                <span class="badge-purple">💜 めじこん</span>
+                <span class="timestamp">10:06</span>
+            </div>
+
+            <a href="https://dc.gg/md" class="main-link">https://dc.gg/md</a>
+
+            <div class="discord-embed">
+                <div class="embed-label">Discord</div>
+                <a href="https://discord.com/invite/xzvzXsVWDe" class="embed-title">Join the md Discord Server!</a>
+                <div class="embed-footer">
+                    https://discord.com/invite/xzvzXsVWDe | 664 members
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
