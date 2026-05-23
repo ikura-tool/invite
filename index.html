@@ -1,8 +1,61 @@
-<iframe 
-  src="https://discord.com/widget?id=1427255563888099331&theme=dark" 
-  width="350" 
-  height="500" 
-  allowtransparency="true" 
-  frameborder="0" 
-  sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-</iframe>
+<style>
+  /* カード全体のコンテナ */
+  .discord-card {
+    background-color: #2b2d31; /* Discordの背景色 */
+    border-radius: 4px;
+    border-left: 4px solid #1e1f22; /* 左側の暗いアクセント */
+    padding: 16px;
+    max-width: 432px;
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none; /* リンクの下線を消す */
+    transition: background-color 0.1s;
+  }
+
+  .discord-card:hover {
+    background-color: #2e3035; /* ホバー時に少し明るく */
+  }
+
+  /* 上部の「Discord」テキスト */
+  .discord-card-label {
+    color: #dbdee1;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  /* 中央の大きなタイトル（リンク風の青色） */
+  .discord-card-title {
+    color: #00a8fc;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .discord-card-title:hover {
+    text-decoration: underline;
+  }
+
+  /* 下部の詳細情報（URL | メンバー数） */
+  .discord-card-footer {
+    color: #ffffff;
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  .discord-card-footer span {
+    color: #ffffff;
+    opacity: 0.9;
+  }
+</style>
+
+<a href="https://discord.gg/xzvzXsVWDe" target="_blank" class="discord-card">
+  <div class="discord-card-label">Discord</div>
+  <div class="discord-card-title">Join the md Discord Server!</div>
+  <div class="discord-card-footer">
+    https://discord.com/invite/xzvzXsVWDe | 664 members
+  </div>
+</a>
